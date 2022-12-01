@@ -1,0 +1,39 @@
+// sparsematrix
+#include<iostream>
+using namespace std;
+
+int main() {
+    int a[3][3],i,j,k=0,c=0;
+    cout<<"enter matrix elements:\n";
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            cin>>a[i][j];
+        }
+    }
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            if(a[i][j]!=0){
+                c++;
+            }
+        }
+    }
+    int b[3][c];
+    for(i=0;i<3;i++){
+        for(j=0;j<3;j++){
+            if(a[i][j]!=0){
+                b[0][k]=i;
+                b[1][k]=j;
+                b[2][k]=a[i][j];
+                k++;
+            }
+        }
+    }
+    cout<<"sparse matrix is\n";
+    for(i=0;i<3;i++){
+        for(j=0;j<c;j++){
+            cout<<b[i][j]<<endl;
+        }
+        cout<<"\n";
+    }
+    return 0;
+}
